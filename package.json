@@ -1,0 +1,26 @@
+{
+  "name": "the-team-showcase.hansollim.toss",
+  "version": "0.0.1",
+  "description": "Homework project for toss recruit",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 manage.py runserver",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsol/homework-toss-server.git"
+  },
+  "keywords": [
+    "toss",
+    "python",
+    "django",
+    "react"
+  ],
+  "author": "HansolLim <dev.hansolilm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hsol/homework-toss-server/issues"
+  },
+  "homepage": "https://github.com/hsol/homework-toss-server#readme"
+}
