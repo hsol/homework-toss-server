@@ -12,7 +12,9 @@ from rest_framework import routers
 def view_page(request):
     template = loader.get_template('index.html')
 
-    return HttpResponse(template.render({}, request))
+    return HttpResponse(template.render({
+        'title': 'The Team Showcase - toss recruit homework'
+    }, request))
 
 
 router = routers.DefaultRouter()
@@ -28,6 +30,6 @@ for viewSetFileName in os.listdir(dirName):
                 router.register(basename.replace("ViewSet", "").lower(), cls, basename=basename.lower())
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    url(r'api', include(router.urls)),
     url('', view_page, name='index')
 ]
