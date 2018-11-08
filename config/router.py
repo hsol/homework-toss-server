@@ -4,8 +4,6 @@ import inspect
 import importlib
 
 from django.conf.urls import url, include
-from django.http import HttpResponse
-from django.template import loader
 from rest_framework import routers
 
 router = routers.DefaultRouter()
