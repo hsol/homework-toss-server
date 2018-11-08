@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npm run clean",
-    "prestart": "webpack --mode development",
-    "start": "python3 manage.py runserver 8080",
+    "prestart": "npm run build-dev",
+    "start": "webpack-dev-server",
     "prebuild": "rm -rf dist",
     "build": "webpack --mode production",
-    "build-dev": "webpack --mode development && webpack-dev-server",
+    "build-dev": "webpack --mode development",
     "analyze": "webpack --mode production --analyze",
     "clean": "rm -rf node_modules && git checkout package-lock.json",
     "test": "mocha $(find ./static/src/Test -name '*.spec.js') --recursive --require babel-core/register --exit"
