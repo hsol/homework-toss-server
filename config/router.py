@@ -8,15 +8,6 @@ from django.http import HttpResponse
 from django.template import loader
 from rest_framework import routers
 
-
-def view_page(request):
-    template = loader.get_template('index.html')
-
-    return HttpResponse(template.render({
-        'title': 'The Team Showcase - toss recruit homework'
-    }, request))
-
-
 router = routers.DefaultRouter()
 dirName = os.path.dirname(os.path.abspath(__file__)) + '/../src/ViewSets'
 for viewSetFileName in os.listdir(dirName):
@@ -30,6 +21,5 @@ for viewSetFileName in os.listdir(dirName):
                 router.register(basename.replace("ViewSet", "").lower(), cls, basename=basename.lower())
 
 urlpatterns = [
-    url(r'api', include(router.urls)),
-    url('', view_page, name='index')
+    url(r'', include(router.urls))
 ]
