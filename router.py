@@ -7,7 +7,7 @@ from django.conf.urls import url, include
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-dirName = os.path.dirname(os.path.abspath(__file__)) + '/../src/ViewSets'
+dirName = os.path.dirname(os.path.abspath(__file__)) + '/src/ViewSets'
 for viewSetFileName in os.listdir(dirName):
     if re.compile("ViewSet.py$").search(viewSetFileName):
         basename = viewSetFileName.replace(".py", "")
