@@ -19,7 +19,3 @@ Blue, Inc.라는 회사의 조직 구성을 소개하는 one page server를 제�
 ## execute
     1. make start-server
     2. make start-client
-    
-## documentation
-    1. sphi
-    2. make start-client
