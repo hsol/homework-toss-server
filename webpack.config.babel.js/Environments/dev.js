@@ -6,18 +6,13 @@ export default {
         new HotModuleReplacementPlugin()
     ],
     devServer: {
-        compress: true,
-        publicPath: '/',
-        host: 'localhost',
-        port: 8000,
-        proxy: {
-            "**": "http://localhost:8080"
-        },
+        index: 'index.html',
         watchContentBase: true,
         contentBase: pathConst.dist,
         watchOptions: {
             poll: true
         },
+        port: 80,
         historyApiFallback: true,
         hot: true,
         overlay: true,

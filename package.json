@@ -6,10 +6,10 @@
   "scripts": {
     "preinstall": "npm run clean",
     "prestart": "webpack --mode development",
-    "start": "python3 manage.py runserver && webpack-dev-server",
+    "start": "python3 manage.py runserver 8080",
     "prebuild": "rm -rf dist",
     "build": "webpack --mode production",
-    "build-dev": "webpack --mode development",
+    "build-dev": "webpack --mode development && webpack-dev-server",
     "analyze": "webpack --mode production --analyze",
     "clean": "rm -rf node_modules && git checkout package-lock.json",
     "test": "mocha $(find ./static/src/Test -name '*.spec.js') --recursive --require babel-core/register --exit"
@@ -31,6 +31,8 @@
   },
   "homepage": "https://github.com/hsol/homework-toss-server#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bulma": "^0.7.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
@@ -63,7 +65,6 @@
     "react-hot-loader": "^4.3.4",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
-    "typed.js": "^2.0.9",
     "url-loader": "^1.1.0",
     "webpack": "^4.16.5",
     "webpack-bundle-analyzer": "^2.13.1",
