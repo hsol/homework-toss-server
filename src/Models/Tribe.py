@@ -2,18 +2,19 @@ from django.db import models
 from rest_framework import serializers
 
 
-class Model(models.Model):
-    id = models.IntegerField(primary_key=True)
+class TribeModel(models.Model):
+    class Meta:
+        db_table = 'tribe'
+    objects = models.Manager()
+
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
 
-class Serializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
-    highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
-
+class TribeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Model
+        model = TribeModel
         fields = ('id', 'name')
