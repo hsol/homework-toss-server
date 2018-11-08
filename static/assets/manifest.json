@@ -1,0 +1,9 @@
+{
+  "short_name": "The Team Showcase",
+  "name": "The Team Showcase - toss recruit homework",
+  "start_url": "index.html?app=true",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#34495e",
+  "background_color": "#2980b9"
+}

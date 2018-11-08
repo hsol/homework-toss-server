@@ -1,0 +1,38 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/mixins";
+
+@include mobile {
+  * {
+    font-size: 11px;
+  }
+}
+
+@include tablet {
+  * {
+    font-size: 13px;
+  }
+}
+
+@include desktop {
+  * {
+    font-size: 15px;
+  }
+}
+
+.toggle-hover {
+  .on-hover {
+    display: none;
+  }
+  .off-hover {
+    display: inherit;
+  }
+  &:hover {
+    cursor: zoom-in;
+    .on-hover {
+      display: inherit;
+    }
+    .off-hover {
+      display: none;
+    }
+  }
+}
